@@ -23,7 +23,7 @@ public enum FileEnum {
         this.value = value;
     }
 
-    final String value;
+    private String value;
 
     public String getValue() {
         return value;

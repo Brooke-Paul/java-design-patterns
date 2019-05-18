@@ -17,8 +17,16 @@ public class FactoryTest {
      */
     public static void main(String[] args) {
         FactoryTest factoryTest = new FactoryTest();
+        // 1. 普通工厂方法
         File file = factoryTest.createFile(FileEnum.WORD_FILE);
         file.downLoadFile();
+
+        // 2.抽象工厂方法
+        IFactoryMethod iFactoryMethod = new IFactoryMethodFactory();
+
+        iFactoryMethod.createWordFile().downLoadFile();
+        iFactoryMethod.createExcelFile().downLoadFile();
+
     }
 
 
