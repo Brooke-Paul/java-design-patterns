@@ -18,7 +18,7 @@ public class FactoryTest {
     public static void main(String[] args) {
         FactoryTest factoryTest = new FactoryTest();
         // 1. 普通工厂方法
-        File file = factoryTest.createFile(FileEnum.WORD_FILE);
+        File file = factoryTest.downLoadFile(FileEnum.WORD_FILE);
         file.downLoadFile();
 
         // 2.抽象工厂方法
@@ -29,8 +29,13 @@ public class FactoryTest {
 
     }
 
-
-    public File createFile(FileEnum fileEnum) {
+    /**
+     * 普通工厂方法
+     *
+     * @param fileEnum
+     * @return
+     */
+    public File downLoadFile(FileEnum fileEnum) {
         File file = null;
         switch (fileEnum) {
             case EXCEL_FILE:
@@ -42,7 +47,6 @@ public class FactoryTest {
             default:
                 file = new WordFile();
                 break;
-
         }
         return file;
     }
