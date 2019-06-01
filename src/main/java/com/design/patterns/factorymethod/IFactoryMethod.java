@@ -13,12 +13,12 @@ public interface IFactoryMethod {
      *
      * @return
      */
-    WordFile createWordFile();
+    WordFile createWordFile() throws Exception;
 
     /**
      * 创建excel文件
      *
      * @return
      */
-    ExcelFile createExcelFile();
+    ExcelFile createExcelFile() throws Exception;
 }

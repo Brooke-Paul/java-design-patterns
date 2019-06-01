@@ -15,17 +15,21 @@ public class FactoryTest {
      *
      * @param args
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         FactoryTest factoryTest = new FactoryTest();
         // 1. 普通工厂方法
         File file = factoryTest.downLoadFile(FileEnum.WORD_FILE);
         file.downLoadFile();
 
-        // 2.抽象工厂方法
-        IFactoryMethod iFactoryMethod = new IFactoryMethodFactory();
+        // 2.下载excel
+        IFactoryMethod iFactoryMethod = new ExcelFileMethodFactory();
+        ExcelFile excelFile = iFactoryMethod.createExcelFile();
+        excelFile.downLoadFile();
 
-        iFactoryMethod.createWordFile().downLoadFile();
-        iFactoryMethod.createExcelFile().downLoadFile();
+        // 3. 下载word
+        IFactoryMethod iFactoryMethod1 = new WordFileMethodFactory();
+        WordFile wordFile = iFactoryMethod1.createWordFile();
+        wordFile.downLoadFile();
 
     }
 
