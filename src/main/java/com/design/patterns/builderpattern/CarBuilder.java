@@ -2,7 +2,7 @@ package com.design.patterns.builderpattern;
 
 /**
  * @Author xuetao
- * @Description: 构造类负构建汽车对象
+ * @Description: 构造类负责构建汽车对象
  * @Date 2019-06-10
  * @Version 1.0
  */
